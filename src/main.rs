@@ -43,4 +43,7 @@ fn data_types() {
     println!("trunc: {}", trunc);
     let remainder = 43%5;
     println!("remainder: {}", remainder);
+
+    let a: [i32; 5] = [1,2,3,4,5];
+    println!("arr: {:?}", a); // for array to print, you need ':?' inside bracket
 }
