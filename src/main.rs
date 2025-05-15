@@ -2,6 +2,22 @@
 fn main() {
     scope();
     data_types();
+    expression();
+
+    let x = five();
+    println!("The value of x is: {x}");
+    if_test();
+
+    let mut count = 0;
+    let loop_res = loop {
+        if count < 5 {
+            count+=1;
+            println!("Count: {count}");
+            continue
+        }
+        break count*2
+    };
+    println!("Loop Res: {loop_res}");
 }
 
 fn scope() {
@@ -46,4 +62,23 @@ fn data_types() {
 
     let a: [i32; 5] = [1,2,3,4,5];
     println!("arr: {:?}", a); // for array to print, you need ':?' inside bracket
+}
+
+fn expression() {
+    let y = {
+        let x = 3;
+        x + 1 // If you add a semicolon to the end of an expression, you turn it into a statement, and it will then not return a value.
+    };
+    println!("The value of y is: {y}");
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn if_test() {
+    let num = 9;
+    if num < 10 {
+        println!("Num: {num}")
+    }
 }
